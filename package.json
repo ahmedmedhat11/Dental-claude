@@ -1,0 +1,82 @@
+{
+  "name": "dental-clinic-management",
+  "version": "1.0.0",
+  "description": "Offline Windows Desktop Dental Clinic Management System",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder --win --x64",
+    "build:portable": "electron-builder --win --x64 portable",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": [
+    "dental",
+    "clinic",
+    "management",
+    "electron",
+    "offline"
+  ],
+  "author": "Dental Clinic",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "better-sqlite3": "^9.2.2",
+    "dotenv": "^16.3.1",
+    "electron-store": "^8.1.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.dentalclinic.management",
+    "productName": "Dental Clinic Manager",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "assets/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico",
+      "artifactName": "${productName}-${version}-Setup.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Dental Clinic Manager"
+    },
+    "extraResources": [
+      {
+        "from": "database/",
+        "to": "database/",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "type": "commonjs"
+}

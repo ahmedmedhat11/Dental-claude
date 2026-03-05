@@ -1,0 +1,41 @@
+├── .
+├── .env.example
+├── .gitignore
+├── BUILD_INSTRUCTIONS.md
+├── DATABASE_SCHEMA.md
+├── PHASE_1_COMPLETE.md
+├── PROJECT_STRUCTURE.md
+├── PROJECT_TREE.txt
+├── README.md
+├── assets
+├── database
+  ├── backups
+├── package.json
+├── renderer
+  ├── css
+    ├── styles.css
+  ├── index.html
+  ├── js
+    ├── renderer.js
+├── src
+  ├── database
+    ├── init-schema.js
+  ├── ipc
+    ├── appointment-handlers.js
+    ├── audit-handlers.js
+    ├── auth-handlers.js
+    ├── backup-handlers.js
+    ├── followup-handlers.js
+    ├── handlers.js
+    ├── invoice-handlers.js
+    ├── medication-handlers.js
+    ├── patient-handlers.js
+    ├── print-handlers.js
+    ├── referral-handlers.js
+    ├── report-handlers.js
+    ├── settings-handlers.js
+    ├── user-handlers.js
+    ├── util-handlers.js
+    ├── visit-handlers.js
+  ├── main.js
+  ├── preload.js
